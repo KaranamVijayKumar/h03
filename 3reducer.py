@@ -1,4 +1,4 @@
-s = open("s.txt","r")
+s = open("02.txt","r")
 r = open("r.txt", "w")
 
 thisKey = ""
@@ -25,3 +25,36 @@ r.write(thisKey + '\t' + str(thisValue)+'\n')
 
 s.close()
 r.close()
+
+d = dict((line.strip().split('	') for line in open("r.txt")))
+#print(d)
+# print(max(d.keys()))
+
+#print(max(zip(d.values(),d.keys())))
+#print(d["Austin"])
+abc = list((d.values()))
+newList = []
+for each in abc:
+  newList.append(float(each))
+
+
+maxValue = max((newList))
+#print(maxValue)
+keyValue = "" 
+for key, value in d.items():
+  if float(value) == maxValue:
+    keyValue = key
+    break
+print(keyValue,' : ',maxValue)
+
+#print(max(d, key=d.get))
+
+#for key value in d:
+
+
+# a_dictionary = {"a": 1, "b": 2, "c": 3}
+# max_key = max(d, key=d.get)
+# print(max_key)
+
+# max_key = max(d, key=d.get)
+# print(max_key)

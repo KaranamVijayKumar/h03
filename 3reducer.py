@@ -38,7 +38,7 @@ for each in abc:
   newList.append(float(each))
 
 
-maxValue = max((newList))
+maxValue = min((newList))
 #print(maxValue)
 keyValue = "" 
 for key, value in d.items():
